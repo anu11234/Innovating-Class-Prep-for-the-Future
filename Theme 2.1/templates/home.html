@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachPrep - Spend Less Time Planning, More Time Teaching</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            padding: 6rem 0;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .testimonial-quote {
+            position: relative;
+            padding: 20px;
+        }
+        
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-stars me-2 text-primary"></i>
+                <span class="fw-bold">TeachPrep</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-primary me-2">Log In</a>
+                    <a href="{{ url_for('signup') }}" class="btn btn-primary">Sign Up Free</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Spend Less Time Planning, More Time Teaching</h1>
+                    <p class="lead text-muted mb-4">
+                        TeachPrep is the all-in-one platform that helps educators create engaging lessons in minutes, not hours.
+                        Powered by AI and designed by teachers, for teachers.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg px-4">Get Started Free</a>
+                        <a href="#how-it-works" class="btn btn-outline-secondary btn-lg px-4">See How It Works</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3 bg-white rounded shadow-lg">
+                        <img src="https://placehold.co/600x400" alt="TeachPrep Dashboard Preview" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Features That Save You Time</h2>
+                <p class="lead text-muted">
+                    Our platform is designed to streamline your class preparation process, giving you back valuable time to
+                    focus on what matters most.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-primary bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-lightbulb text-primary fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">AI Lesson Planning</h3>
+                            <p class="card-text">Generate complete lesson plans based on your curriculum standards, grade level, and teaching style in minutes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-success bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-file-text text-success fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">Resource Curation</h3>
+                            <p class="card-text">Discover and organize teaching materials, worksheets, and activities tailored to your specific needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-info bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-share text-info fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">Collaboration Tools</h3>
+                            <p class="card-text">Share and collaborate on lesson plans with colleagues, making team teaching and department planning seamless.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-warning bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-calendar text-warning fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">Curriculum Mapping</h3>
+                            <p class="card-text">Visualize your entire year's curriculum and ensure alignment with standards and learning objectives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-danger bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-book text-danger fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">Assessment Builder</h3>
+                            <p class="card-text">Create quizzes, tests, and assignments that align with your lesson objectives and provide meaningful feedback.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="d-inline-block bg-secondary bg-opacity-10 p-3 rounded-circle mb-3">
+                                <i class="bi bi-clock text-secondary fs-4"></i>
+                            </div>
+                            <h3 class="card-title h5">Time Tracking</h3>
+                            <p class="card-text">Monitor how you spend your prep time and identify opportunities to streamline your workflow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Teachers Are Saying</h2>
+                <p class="lead text-muted">
+                    Hear from educators who have transformed their class preparation process with TeachPrep.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="testimonial-quote">
+                            <p class="fst-italic mb-4">TeachPrep has cut my lesson planning time in half. The AI suggestions are spot-on and I love how easy it is to customize everything.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://placehold.co/50" class="rounded-circle me-3" alt="Teacher">
+                                <div>
+                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                    <small class="text-muted">5th Grade Teacher</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="testimonial-quote">
+                            <p class="fst-italic mb-4">The resource curation feature has been a game-changer. I've discovered so many high-quality materials that I wouldn't have found otherwise.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://placehold.co/50" class="rounded-circle me-3" alt="Teacher">
+                                <div>
+                                    <h6 class="mb-0">Michael Rodriguez</h6>
+                                    <small class="text-muted">High School Science Teacher</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="testimonial-quote">
+                            <p class="fst-italic mb-4">Collaborating with my department has never been easier. We can all contribute to and refine our curriculum together, ensuring consistency across classrooms.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://placehold.co/50" class="rounded-circle me-3" alt="Teacher">
+                                <div>
+                                    <h6 class="mb-0">Emily Chen</h6>
+                                    <small class="text-muted">Middle School Math Teacher</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="pricing">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-3">Ready to Transform Your Class Prep?</h2>
+                    <p class="lead text-muted mb-4">
+                        Join thousands of educators who are saving time and creating better learning experiences with
+                        TeachPrep.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg px-4">Get Started Free</a>
+                        <a href="#" class="btn btn-outline-secondary btn-lg px-4">Request a Demo</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-white py-3">
+                            <h3 class="card-title mb-0">Free 30-Day Trial</h3>
+                            <p class="card-text text-muted">No credit card required. Full access to all features.</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Unlimited AI lesson plan generation</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Access to resource library</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Collaboration with up to 5 colleagues</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Assessment creation tools</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Curriculum mapping features</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white py-3">
+                            <a href="{{ url_for('signup') }}" class="btn btn-primary w-100">Start Your Free Trial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 border-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-stars me-2 text-primary"></i>
+                        <span class="fw-bold">TeachPrep</span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0 text-center">
+                    <p class="text-muted mb-0">© 2024 TeachPrep. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-muted">Terms</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-muted">Privacy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-muted">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
